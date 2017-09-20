@@ -7,12 +7,30 @@
     tools:context="com.example.enzozafra.zafra_countbook.MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif"
+        android:text="Welcome to CountBook!"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.217"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toLeftOf="@+id/button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.062" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="66dp"
+        android:layout_height="44dp"
+        android:onClick="newCounter"
+        android:text="+"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView"
+        tools:layout_editor_absoluteX="262dp" />
 
 </android.support.constraint.ConstraintLayout>
