@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">zafra-CountBook</string>
     <string name="static_title">Welcome to CountBook!</string>
+    <string name="static_newcounter">Add a new counter</string>
     <string name="static_name">Enter a name:</string>
     <string name="button_add">+</string>
     <string name="static_comment">Enter any comments:</string>
     <string name="static_init">Enter initial value:</string>
-    <string name="static_curr">Enter initial value:</string>
+    <string name="static_curr">Enter current value:</string>
+    <string name="button_ok">OK</string>
+    <string name="button_cancel">Cancel</string>
 </resources>

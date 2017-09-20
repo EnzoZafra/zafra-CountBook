@@ -13,6 +13,22 @@
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/static_newcounter"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_weight="2">
@@ -28,8 +44,7 @@
                 android:id="@+id/nameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName" />
+                android:ems="10" />
 
         </LinearLayout>
 
@@ -54,7 +69,7 @@
                 android:inputType="number" />
 
         </LinearLayout>
-
+<!--
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
@@ -76,7 +91,7 @@
                 android:inputType="number" />
 
         </LinearLayout>
-
+-->
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
@@ -96,17 +111,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"/>
+                android:inputType="textMultiLine" />
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_ok"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_cancel"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 
-
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="12dp"
-        android:layout_height="wrap_content">
-
-    </android.support.design.widget.TextInputLayout>
 </android.support.constraint.ConstraintLayout>
