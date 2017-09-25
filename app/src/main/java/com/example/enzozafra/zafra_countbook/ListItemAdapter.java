@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
@@ -48,11 +48,15 @@ public class ListItemAdapter extends BaseAdapter implements ListAdapter {
         TextView listItemText = (TextView)view.findViewById(R.id.list_item_string);
         listItemText.setText(list.get(pos).getName());
 
+        //Handle TextView and display string from your list
+        TextView listItemCount = (TextView)view.findViewById(R.id.list_item_count);
+        listItemCount.setText(list.get(pos).getCurrentValue().toString());
+
         //Handle buttons and add onClickListeners
-        Button deleteBtn = (Button)view.findViewById(R.id.delete_btn);
-        Button incBtn = (Button)view.findViewById(R.id.inc_btn);
-        Button decBtn = (Button)view.findViewById(R.id.dec_btn);
-        Button viewBtn = (Button)view.findViewById(R.id.view_btn);
+        ImageButton deleteBtn = (ImageButton)view.findViewById(R.id.delete_btn);
+        ImageButton incBtn = (ImageButton)view.findViewById(R.id.inc_btn);
+        ImageButton decBtn = (ImageButton)view.findViewById(R.id.dec_btn);
+        ImageButton editBtn = (ImageButton)view.findViewById(R.id.edit_btn);
 
         deleteBtn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -78,7 +82,7 @@ public class ListItemAdapter extends BaseAdapter implements ListAdapter {
             }
         });
 
-        viewBtn.setOnClickListener(new View.OnClickListener(){
+        editBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 //TODO

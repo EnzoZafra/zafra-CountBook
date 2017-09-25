@@ -9,4 +9,10 @@
     <string name="static_curr">Enter current value:</string>
     <string name="button_ok">OK</string>
     <string name="button_cancel">Cancel</string>
+    <string name="buttondesc_delete">Delete button</string>
+    <string name="buttondesc_inc">Increment button</string>
+    <string name="buttondesc_dec">Decrement button</string>
+    <string name="buttondesc_edit">Edit button</string>
+    <string name="buttondesc_new">New button</string>
+
 </resources>

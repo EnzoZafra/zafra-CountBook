@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
@@ -7,47 +8,52 @@
         android:id="@+id/list_item_string"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
+        android:adjustViewBounds="true"
         android:paddingLeft="8dp"
+        android:paddingRight="8dp"
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <Button
+    <ImageButton
         android:id="@+id/delete_btn"
+        android:adjustViewBounds="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="5dp"
-        android:text="Delete" />
+        android:src="@drawable/ic_custom_delete"
+        android:contentDescription="@string/buttondesc_delete" />
 
-    <Button
+    <ImageButton
         android:id="@+id/inc_btn"
+        android:adjustViewBounds="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/delete_btn"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="10dp"
-        android:text="+1" />
+        android:src="@drawable/ic_custom_increment"
+        android:contentDescription="@string/buttondesc_inc" />
 
-    <Button
+    <ImageButton
         android:id="@+id/dec_btn"
+        android:adjustViewBounds="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/inc_btn"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="10dp"
-        android:text="-1" />
+        android:src="@drawable/ic_custom_decrement"
+        android:contentDescription="@string/buttondesc_dec" />
 
-    <Button
-        android:id="@+id/view_btn"
+    <ImageButton
+        android:id="@+id/edit_btn"
+        android:adjustViewBounds="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/dec_btn"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="10dp"
-        android:text="Edit" />
+        android:src="@drawable/ic_custom_edit"
+        android:contentDescription="@string/buttondesc_edit" />
 
+    <TextView
+        android:id="@+id/list_item_count"
+        android:adjustViewBounds="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textSize="35sp"
+        android:textStyle="bold" />
 
-</RelativeLayout>
+</LinearLayout>

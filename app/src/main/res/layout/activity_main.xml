@@ -33,17 +33,18 @@
                 app:layout_goneMarginLeft="16dp"
                 android:layout_marginLeft="8dp" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/button"
                 android:layout_width="88dp"
                 android:layout_height="48dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:onClick="newCounter"
-                android:text="@string/button_add"
+                android:src="@drawable/ic_custom_new"
                 app:layout_constraintBaseline_toBaselineOf="@+id/titleTextView"
                 app:layout_constraintLeft_toRightOf="@+id/titleTextView"
-                app:layout_constraintRight_toRightOf="parent" />
+                app:layout_constraintRight_toRightOf="parent"
+                android:contentDescription="@string/buttondesc_new" />
 
         </LinearLayout>
 

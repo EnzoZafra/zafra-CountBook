@@ -12,12 +12,14 @@ public class Counter {
     public Counter(String name, Integer initialValue) {
         this.name = name;
         this.initialValue = initialValue;
+        this.currentValue = initialValue;
         this.dateEdited = new Date();
     }
 
     public Counter(String name, Integer initialValue, String comment) {
         this.name = name;
         this.initialValue = initialValue;
+        this.currentValue = initialValue;
         this.dateEdited = new Date();
         this.comment = comment;
     }
@@ -59,10 +61,10 @@ public class Counter {
     }
 
     public void incCounter() {
-        this.initialValue++;
+        this.currentValue++;
     }
 
     public void decCounter() {
-        this.initialValue--;
+        this.currentValue--;
     }
 }
