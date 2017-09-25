@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.util.Date;
 
 public class NewCounterActivity extends AppCompatActivity {
 
@@ -18,11 +20,18 @@ public class NewCounterActivity extends AppCompatActivity {
 
         Button okButton = (Button) findViewById(R.id.okButton);
         Button cancelButton = (Button) findViewById(R.id.cancelButton);
+        final EditText nameEdit = (EditText) findViewById(R.id.nameEditText);
+        final EditText initEdit = (EditText) findViewById(R.id.initEditText);
+        final EditText commentEdit = (EditText) findViewById(R.id.commentEditView);
 
         okButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Counter newCounter = new Counter("test", 23);
+                String name = nameEdit.getText().toString();
+                Integer initialValue = Integer.valueOf(initEdit.getText().toString());
+                String comment = commentEdit.getText().toString();
+
+                Counter newCounter = new Counter(name, initialValue, comment);
                 Log.d("activityresult", newCounter.toString());
 
                 Intent output = new Intent();

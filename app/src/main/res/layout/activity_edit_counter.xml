@@ -97,22 +97,37 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-
-            <Button
-                android:id="@+id/okButton"
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/dateTextView"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/button_ok"
-                android:layout_weight="1" />
+                android:textSize="20sp"
+                android:textStyle="bold" >
 
-            <Button
-                android:id="@+id/cancelButton"
-                android:layout_width="0dp"
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/button_cancel"
-                android:layout_weight="1" />
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/okButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_ok"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/cancelButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_cancel"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
