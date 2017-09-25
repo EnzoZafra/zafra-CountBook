@@ -1,8 +1,11 @@
 package com.example.enzozafra.zafra_countbook;
 
+import android.os.Parcelable;
+
+import java.io.Serializable;
 import java.util.Date;
 
-public class Counter {
+public class Counter implements Serializable {
     private String name;
     private Date dateEdited;
     private Integer currentValue;
@@ -66,5 +69,13 @@ public class Counter {
 
     public void decCounter() {
         this.currentValue--;
+    }
+
+    // For testing purposes
+    @Override
+    public String toString() {
+        return "Name: " + name + "; currentValue: " + currentValue.toString() +
+                "; initialValue: " + initialValue.toString() + "; comment: " + comment +
+                "; dateEdited: " + dateEdited.toString();
     }
 }
