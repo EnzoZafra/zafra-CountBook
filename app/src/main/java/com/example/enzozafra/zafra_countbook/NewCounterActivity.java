@@ -9,8 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.Date;
-
 public class NewCounterActivity extends AppCompatActivity {
 
     @Override
@@ -18,11 +16,34 @@ public class NewCounterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_counter);
 
-        Button okButton = (Button) findViewById(R.id.okButton);
-        Button cancelButton = (Button) findViewById(R.id.cancelButton);
+        final Button okButton = (Button) findViewById(R.id.okButton);
+        final Button cancelButton = (Button) findViewById(R.id.cancelButton);
         final EditText nameEdit = (EditText) findViewById(R.id.nameEditText);
         final EditText initEdit = (EditText) findViewById(R.id.initEditText);
         final EditText commentEdit = (EditText) findViewById(R.id.commentEditView);
+
+        // TODO: button becomes enabled when one of the box passes the test/
+        nameEdit.addTextChangedListener(new TextValidator(nameEdit) {
+            @Override public void validate(TextView textView, String text) {
+                if ((text.isEmpty() || initEdit.getText().toString().isEmpty()) && okButton.isEnabled()) {
+                    okButton.setEnabled(false);
+                } else {
+                    okButton.setEnabled(true);
+                }
+                Log.d("validatetest", text);
+            }
+        });
+
+        initEdit.addTextChangedListener(new TextValidator(initEdit) {
+            @Override public void validate(TextView textView, String text) {
+                if ((text.isEmpty() || nameEdit.getText().toString().isEmpty()) && okButton.isEnabled()) {
+                    okButton.setEnabled(false);
+                } else {
+                    okButton.setEnabled(true);
+                }
+                Log.d("validatetest", text);
+            }
+        });
 
         okButton.setOnClickListener(new View.OnClickListener(){
             @Override
