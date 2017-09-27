@@ -13,22 +13,6 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/static_newcounter"
-                android:textSize="34sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
             android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_weight="2">
@@ -37,7 +21,7 @@
                 android:id="@+id/nameTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/static_name"
+                android:text="@string/static_edit_name"
                 android:textSize="20sp" />
 
             <EditText
@@ -58,11 +42,33 @@
                 android:id="@+id/initTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/static_init"
+                android:text="@string/static_edit_init"
                 android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/initEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/currTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/static_edit_curr"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/currEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -81,7 +87,7 @@
                 android:id="@+id/commentTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/static_comment"
+                android:text="@string/static_edit_comment"
                 android:textSize="20sp" />
 
             <EditText

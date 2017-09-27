@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants">
 
     <TextView
         android:id="@+id/list_item_string"
@@ -37,14 +38,6 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_custom_decrement"
         android:contentDescription="@string/buttondesc_dec" />
-
-    <ImageButton
-        android:id="@+id/edit_btn"
-        android:adjustViewBounds="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_custom_edit"
-        android:contentDescription="@string/buttondesc_edit" />
 
     <TextView
         android:id="@+id/list_item_count"
