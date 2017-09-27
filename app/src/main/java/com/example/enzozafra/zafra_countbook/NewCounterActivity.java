@@ -25,7 +25,8 @@ public class NewCounterActivity extends AppCompatActivity {
 
         nameEdit.addTextChangedListener(new TextValidator(nameEdit) {
             @Override public void validate(TextView textView, String text) {
-                if ((text.isEmpty() || initEdit.getText().toString().isEmpty()) && okButton.isEnabled()) {
+                if ((text.isEmpty() || initEdit.getText().toString().isEmpty() ||
+                        nameEdit.getText().toString().isEmpty()) && okButton.isEnabled()) {
                     okButton.setEnabled(false);
                     errorText.setVisibility(View.VISIBLE);
 
@@ -38,7 +39,8 @@ public class NewCounterActivity extends AppCompatActivity {
 
         initEdit.addTextChangedListener(new TextValidator(initEdit) {
             @Override public void validate(TextView textView, String text) {
-                if ((text.isEmpty() || nameEdit.getText().toString().isEmpty()) && okButton.isEnabled()) {
+                if ((text.isEmpty() || nameEdit.getText().toString().isEmpty() ||
+                        nameEdit.getText().toString().isEmpty()) && okButton.isEnabled()) {
                     okButton.setEnabled(false);
                     errorText.setVisibility(View.VISIBLE);
                 } else {
