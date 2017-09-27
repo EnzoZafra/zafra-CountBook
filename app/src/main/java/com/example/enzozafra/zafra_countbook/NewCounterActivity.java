@@ -21,16 +21,18 @@ public class NewCounterActivity extends AppCompatActivity {
         final EditText nameEdit = (EditText) findViewById(R.id.nameEditText);
         final EditText initEdit = (EditText) findViewById(R.id.initEditText);
         final EditText commentEdit = (EditText) findViewById(R.id.commentEditView);
+        final TextView errorText = (TextView) findViewById(R.id.errorText);
 
-        // TODO: button becomes enabled when one of the box passes the test/
         nameEdit.addTextChangedListener(new TextValidator(nameEdit) {
             @Override public void validate(TextView textView, String text) {
                 if ((text.isEmpty() || initEdit.getText().toString().isEmpty()) && okButton.isEnabled()) {
                     okButton.setEnabled(false);
+                    errorText.setVisibility(View.VISIBLE);
+
                 } else {
                     okButton.setEnabled(true);
+                    errorText.setVisibility(View.INVISIBLE);
                 }
-                Log.d("validatetest", text);
             }
         });
 
@@ -38,10 +40,11 @@ public class NewCounterActivity extends AppCompatActivity {
             @Override public void validate(TextView textView, String text) {
                 if ((text.isEmpty() || nameEdit.getText().toString().isEmpty()) && okButton.isEnabled()) {
                     okButton.setEnabled(false);
+                    errorText.setVisibility(View.VISIBLE);
                 } else {
                     okButton.setEnabled(true);
+                    errorText.setVisibility(View.INVISIBLE);
                 }
-                Log.d("validatetest", text);
             }
         });
 

@@ -14,5 +14,6 @@
     <string name="buttondesc_dec">Decrement button</string>
     <string name="buttondesc_edit">Edit button</string>
     <string name="buttondesc_new">New button</string>
+    <string name="newCounterError">Please fill required fields!</string>
 
 </resources>
