@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/sec_light"
     tools:context="com.example.enzozafra.zafra_countbook.NewCounterActivity">
 
     <LinearLayout
@@ -23,7 +24,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/static_newcounter"
                 android:textSize="34sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/prim_dark"/>
 
         </LinearLayout>
 
@@ -38,13 +40,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/static_name"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor="@color/prim_dark"/>
 
             <EditText
                 android:id="@+id/nameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10" />
+                android:ems="10"
+                android:textColor="@color/white"/>
 
         </LinearLayout>
 
@@ -59,14 +63,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/static_init"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor="@color/prim_dark"/>
 
             <EditText
                 android:id="@+id/initEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="@color/white"/>
 
         </LinearLayout>
 
@@ -82,14 +88,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/static_comment"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor="@color/prim_dark"/>
 
             <EditText
                 android:id="@+id/commentEditView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                android:textColor="@color/white"/>
 
         </LinearLayout>
 

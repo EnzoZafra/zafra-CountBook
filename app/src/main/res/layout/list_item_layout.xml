@@ -3,6 +3,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/sec_light"
     android:descendantFocusability="blocksDescendants">
 
     <LinearLayout
@@ -18,7 +19,8 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:textSize="19sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textColor="@color/prim_dark"/>
 
         <TextView
             android:id="@+id/list_item_date"
@@ -26,7 +28,8 @@
             android:layout_height="wrap_content"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
-            android:textSize="17sp"/>
+            android:textSize="17sp"
+            android:textColor="@color/primary"/>
 
 
     </LinearLayout>
@@ -41,7 +44,8 @@
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
         android:textSize="35sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/prim_dark"/>
 
     <ImageButton
         android:id="@+id/dec_btn"

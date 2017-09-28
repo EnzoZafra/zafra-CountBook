@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/sec_light"
     tools:context="com.example.enzozafra.zafra_countbook.NewCounterActivity">
 
     <LinearLayout
@@ -22,13 +23,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/static_edit_name"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor="@color/prim_dark"/>
 
             <EditText
                 android:id="@+id/nameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10" />
+                android:ems="10"
+                android:textColor="@color/white"/>
 
         </LinearLayout>
 
@@ -43,14 +46,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/static_edit_init"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor="@color/prim_dark"/>
 
             <EditText
                 android:id="@+id/initEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="@color/white"/>
 
         </LinearLayout>
 
@@ -65,14 +70,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/static_edit_curr"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor="@color/prim_dark"/>
 
             <EditText
                 android:id="@+id/currEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="@color/white"/>
 
         </LinearLayout>
 
@@ -87,14 +94,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/static_edit_comment"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor="@color/prim_dark"/>
 
             <EditText
                 android:id="@+id/commentEditView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                android:textColor="@color/white"/>
 
         </LinearLayout>
 
@@ -110,13 +119,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/static_date_label"
-                android:textSize="17sp" />
+                android:textSize="18sp"
+                android:textColor="@color/prim_dark"/>
 
             <TextView
                 android:id="@+id/dateView"
                 android:layout_width="match_parent"
+                android:layout_marginLeft="8dp"
                 android:layout_height="wrap_content"
-                android:textSize="17sp" />
+                android:textSize="18sp"
+                android:textColor="@color/white"/>
 
         </LinearLayout>
 

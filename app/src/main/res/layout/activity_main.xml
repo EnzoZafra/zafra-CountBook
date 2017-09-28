@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/sec_light"
     tools:context="com.example.enzozafra.zafra_countbook.MainActivity">
 
     <LinearLayout
@@ -19,6 +20,7 @@
 
             <TextView
                 android:id="@+id/titleTextView"
+                android:textColor="@color/prim_dark"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
@@ -75,7 +77,8 @@
                 android:layout_height="match_parent"
                 android:textSize="17sp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginBottom="8dp"/>
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/white"/>
 
         </LinearLayout>
 
