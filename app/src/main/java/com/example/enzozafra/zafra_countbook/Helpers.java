@@ -1,7 +1,10 @@
 package com.example.enzozafra.zafra_countbook;
 
 import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Helpers {
 
@@ -16,6 +19,11 @@ public class Helpers {
             }
         }
         return -1;
+    }
+
+    public static String setDateFormat(Date date, String format){
+        SimpleDateFormat df = new SimpleDateFormat(format);
+        return df.format(date);
     }
 
 }

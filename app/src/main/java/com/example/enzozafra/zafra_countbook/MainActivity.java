@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -37,11 +38,14 @@ public class MainActivity extends AppCompatActivity {
         // Load old Counters
         loadFromFile();
 
-        //instantiate custom adapter
+        // Set number of counters
+        updateSummary();
+
+        // instantiate custom adapter
         adapter = new ListItemAdapter(counters, this);
 
-        //handle listview and assign adapter
-        ListView lView = (ListView)findViewById(R.id.counter_listview);
+        // handle listview and assign adapter
+        ListView lView = (ListView) findViewById(R.id.counter_listview);
         lView.setAdapter(adapter);
 
         lView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -56,6 +60,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Called when an activity initialized with startActivityForResult() finishes.
+     *
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -77,12 +88,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /** Called when the user clicks the "+" button */
+    /**
+     * Called when the "new" button is clicked.
+     * Starts the new counter activity
+     *
+     * @param view
+     */
     public void newCounter(View view) {
         Intent intent = new Intent(this, NewCounterActivity.class);
         startActivityForResult(intent, NEW_COUNTER_ACTIVITY_REQUEST_CODE);
     }
 
+    /**
+     * Loads the file of previous Counters
+     */
     public void loadFromFile() {
         try {
             FileInputStream fis = openFileInput(FILENAME);
@@ -98,6 +117,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Saves the list of Counters in a local file
+     */
     public void saveInFile() {
         try {
             FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
@@ -112,5 +134,15 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    /**
+     * Updates the UI for the total number of counters
+     */
+    public void updateSummary() {
+        // Set number of counters
+        TextView summaryView = (TextView) findViewById(R.id.summaryView);
+        String summary = "Total number of counters: " + counters.size();
+        summaryView.setText(summary);
     }
 }

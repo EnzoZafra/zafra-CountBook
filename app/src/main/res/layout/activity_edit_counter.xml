@@ -82,7 +82,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="5">
 
-
             <TextView
                 android:id="@+id/commentTextView"
                 android:layout_width="match_parent"
@@ -101,8 +100,30 @@
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:orientation="horizontal"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_weight="1">
+
+
+            <TextView
+                android:id="@+id/staticDateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/static_date_label"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/dateView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
             android:orientation="vertical">
 
             <TextView

@@ -1,9 +1,7 @@
 package com.example.enzozafra.zafra_countbook;
 
-import android.os.Parcelable;
-import android.util.Log;
-
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Counter implements Serializable {
@@ -13,18 +11,30 @@ public class Counter implements Serializable {
     private Integer initialValue;
     private String comment;
 
+    private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+
     public Counter(String name, Integer initialValue) {
         this.name = name;
         this.initialValue = initialValue;
         this.currentValue = initialValue;
-        this.dateEdited = new Date();
+        String unformattedDate = new Date().toString();
+        try {
+            this.dateEdited = format.parse(unformattedDate);
+        } catch (java.text.ParseException e) {
+            this.dateEdited = new Date();
+        }
     }
 
     public Counter(String name, Integer initialValue, String comment) {
         this.name = name;
         this.initialValue = initialValue;
         this.currentValue = initialValue;
-        this.dateEdited = new Date();
+        String unformattedDate = new Date().toString();
+        try {
+            this.dateEdited = format.parse(unformattedDate);
+        } catch (java.text.ParseException e) {
+            this.dateEdited = new Date();
+        }
         this.comment = comment;
     }
 
@@ -32,7 +42,12 @@ public class Counter implements Serializable {
         this.name = name;
         this.initialValue = initialValue;
         this.currentValue = currentValue;
-        this.dateEdited = new Date();
+        String unformattedDate = new Date().toString();
+        try {
+            this.dateEdited = format.parse(unformattedDate);
+        } catch (java.text.ParseException e) {
+            this.dateEdited = new Date();
+        }
         this.comment = comment;
     }
 

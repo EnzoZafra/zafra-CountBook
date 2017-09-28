@@ -44,18 +44,34 @@ public class ListItemAdapter extends BaseAdapter implements ListAdapter {
             view = inflater.inflate(R.layout.list_item_layout, null);
         }
 
-        //Handle TextView and display string from your list
-        TextView listItemText = (TextView)view.findViewById(R.id.list_item_string);
+        //Handle TextView and display name from list
+        TextView listItemText = (TextView) view.findViewById(R.id.list_item_string);
         listItemText.setText(list.get(pos).getName());
 
-        //Handle TextView and display string from your list
-        TextView listItemCount = (TextView)view.findViewById(R.id.list_item_count);
+        //Handle TextView and display current value from list
+        TextView listItemCount = (TextView) view.findViewById(R.id.list_item_count);
         listItemCount.setText(list.get(pos).getCurrentValue().toString());
 
+        //Handle TextView and display date from list
+        TextView listItemDate = (TextView) view.findViewById(R.id.list_item_date);
+        listItemDate.setText(Helpers.setDateFormat(list.get(pos).getDate(), "yyyy-MM-dd"));
+
         //Handle buttons and add onClickListeners
-        ImageButton deleteBtn = (ImageButton)view.findViewById(R.id.delete_btn);
-        ImageButton incBtn = (ImageButton)view.findViewById(R.id.inc_btn);
-        ImageButton decBtn = (ImageButton)view.findViewById(R.id.dec_btn);
+        ImageButton deleteBtn = (ImageButton) view.findViewById(R.id.delete_btn);
+        ImageButton incBtn = (ImageButton) view.findViewById(R.id.inc_btn);
+        ImageButton decBtn = (ImageButton) view.findViewById(R.id.dec_btn);
+        ImageButton resetBtn = (ImageButton) view.findViewById(R.id.reset_btn);
+
+        resetBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Counter selected = list.get(pos);
+                selected.setCurrentValue(selected.getInitialValue());
+                notifyDataSetChanged();
+                ((MainActivity) context).saveInFile();
+
+            }
+        });
 
         deleteBtn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -79,12 +95,21 @@ public class ListItemAdapter extends BaseAdapter implements ListAdapter {
         decBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                list.get(pos).decCounter();
-                notifyDataSetChanged();
-                ((MainActivity) context).saveInFile();
+                Counter selected = list.get(pos);
+                if (selected.getCurrentValue() != 0) {
+                    list.get(pos).decCounter();
+                    notifyDataSetChanged();
+                    ((MainActivity) context).saveInFile();
+                }
             }
         });
 
         return view;
+    }
+
+    @Override
+    public void notifyDataSetChanged() {
+        ((MainActivity) context).updateSummary();
+        super.notifyDataSetChanged();
     }
 }

@@ -5,6 +5,7 @@
     <string name="static_name">Enter a name:</string>
     <string name="static_comment">Enter any comments:</string>
     <string name="static_init">Enter initial value:</string>
+    <string name="static_date_label">Date last edited:</string>
     <string name="button_ok">OK</string>
     <string name="button_cancel">Cancel</string>
     <string name="buttondesc_delete">Delete button</string>
@@ -12,6 +13,7 @@
     <string name="buttondesc_dec">Decrement button</string>
     <string name="buttondesc_edit">Edit button</string>
     <string name="buttondesc_new">New button</string>
+    <string name="buttondesc_reset">Reset button</string>
     <string name="newCounterError">Please fill required fields!</string>
 
     <string name="static_edit_name">Name:</string>

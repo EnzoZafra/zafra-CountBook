@@ -25,6 +25,7 @@ public class EditCounterActivity extends AppCompatActivity {
         final EditText currEdit = (EditText) findViewById(R.id.currEditText);
         final EditText commentEdit = (EditText) findViewById(R.id.commentEditView);
         final TextView errorText = (TextView) findViewById(R.id.errorText);
+        final TextView dateText = (TextView) findViewById(R.id.dateView);
 
         // Load values of the selected counter into the UI
         final Counter selectedCounter = (Counter) getIntent().getSerializableExtra("EDIT_COUNTER");
@@ -34,6 +35,7 @@ public class EditCounterActivity extends AppCompatActivity {
         initEdit.setText(selectedCounter.getInitialValue().toString());
         currEdit.setText(selectedCounter.getCurrentValue().toString());
         commentEdit.setText(selectedCounter.getComment());
+        dateText.setText(Helpers.setDateFormat(selectedCounter.getDate(), "yyyy-mm-dd"));
 
 
         nameEdit.addTextChangedListener(new TextValidator(nameEdit) {
