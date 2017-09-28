@@ -1,7 +1,6 @@
 package com.example.enzozafra.zafra_countbook;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,6 @@ public class ListItemAdapter extends BaseAdapter implements ListAdapter {
 
     private ArrayList<Counter> list = new ArrayList<Counter>();
     private Context context;
-    private static int EDIT_ACTIVITY_REQUEST_CODE = 2;
 
     public ListItemAdapter(ArrayList<Counter> list, Context context) {
         this.list = list;
@@ -64,6 +62,8 @@ public class ListItemAdapter extends BaseAdapter implements ListAdapter {
             public void onClick(View v) {
                 list.remove(pos);
                 notifyDataSetChanged();
+                ((MainActivity) context).saveInFile();
+
             }
         });
 
@@ -72,6 +72,7 @@ public class ListItemAdapter extends BaseAdapter implements ListAdapter {
             public void onClick(View v) {
                 list.get(pos).incCounter();
                 notifyDataSetChanged();
+                ((MainActivity) context).saveInFile();
             }
         });
 
@@ -80,6 +81,7 @@ public class ListItemAdapter extends BaseAdapter implements ListAdapter {
             public void onClick(View v) {
                 list.get(pos).decCounter();
                 notifyDataSetChanged();
+                ((MainActivity) context).saveInFile();
             }
         });
 
