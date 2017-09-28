@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,11 +32,10 @@ public class MainActivity extends AppCompatActivity {
         lView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
-                Log.d("clickitem", "TEST");
                 Intent intent = new Intent(MainActivity.this, EditCounterActivity.class);
                 Counter selectedCounter = (Counter)adapter.getItemAtPosition(position);
-                Log.d("clickitem", selectedCounter.toString());
                 intent.putExtra("EDIT_COUNTER", selectedCounter);
+                intent.putExtra("COUNTER_LIST", list);
                 startActivityForResult(intent, EDIT_COUNTER_ACTIVITY_REQUEST_CODE);
             }
         });
@@ -48,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == NEW_COUNTER_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
             Counter newCounter = (Counter) data.getSerializableExtra("NEW_COUNTER");
             list.add(newCounter);
+            adapter.notifyDataSetChanged();
+        } else if (requestCode == EDIT_COUNTER_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
+            int oldCounterIndex = data.getIntExtra("OLD_COUNTER_INDEX", -1);
+            Counter editedCounter = (Counter) data.getSerializableExtra("EDIT_COUNTER");
+
+            if (oldCounterIndex != -1) {
+                list.set(oldCounterIndex, editedCounter);
+            }
             adapter.notifyDataSetChanged();
         }
     }

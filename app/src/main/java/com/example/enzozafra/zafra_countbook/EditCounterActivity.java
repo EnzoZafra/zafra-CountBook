@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class EditCounterActivity extends AppCompatActivity {
 
     @Override
@@ -24,9 +26,9 @@ public class EditCounterActivity extends AppCompatActivity {
         final EditText commentEdit = (EditText) findViewById(R.id.commentEditView);
         final TextView errorText = (TextView) findViewById(R.id.errorText);
 
-
         // Load values of the selected counter into the UI
-        Counter selectedCounter = (Counter) getIntent().getSerializableExtra("EDIT_COUNTER");
+        final Counter selectedCounter = (Counter) getIntent().getSerializableExtra("EDIT_COUNTER");
+        final ArrayList<Counter> counterList = (ArrayList<Counter>) getIntent().getSerializableExtra("COUNTER_LIST");
 
         nameEdit.setText(selectedCounter.getName());
         initEdit.setText(selectedCounter.getInitialValue().toString());
@@ -36,12 +38,10 @@ public class EditCounterActivity extends AppCompatActivity {
 
         nameEdit.addTextChangedListener(new TextValidator(nameEdit) {
             @Override public void validate(TextView textView, String text) {
-                if ((text.isEmpty() || nameEdit.getText().toString().isEmpty() || initEdit.getText().toString().isEmpty() ||
-                        currEdit.getText().toString().isEmpty())
-                        && okButton.isEnabled()) {
+                if (text.isEmpty() || Helpers.verifyTextBox(initEdit) || Helpers.verifyTextBox(currEdit)) {
                     okButton.setEnabled(false);
+                    errorText.setText(getString(R.string.newCounterError));
                     errorText.setVisibility(View.VISIBLE);
-
                 } else {
                     okButton.setEnabled(true);
                     errorText.setVisibility(View.INVISIBLE);
@@ -51,10 +51,9 @@ public class EditCounterActivity extends AppCompatActivity {
 
         initEdit.addTextChangedListener(new TextValidator(initEdit) {
             @Override public void validate(TextView textView, String text) {
-                if ((text.isEmpty() || nameEdit.getText().toString().isEmpty() || initEdit.getText().toString().isEmpty() ||
-                        currEdit.getText().toString().isEmpty())
-                        && okButton.isEnabled()) {
+                if (text.isEmpty() || Helpers.verifyTextBox(nameEdit) || Helpers.verifyTextBox(currEdit)) {
                     okButton.setEnabled(false);
+                    errorText.setText(getString(R.string.newCounterError));
                     errorText.setVisibility(View.VISIBLE);
                 } else {
                     okButton.setEnabled(true);
@@ -65,10 +64,9 @@ public class EditCounterActivity extends AppCompatActivity {
 
         currEdit.addTextChangedListener(new TextValidator(currEdit) {
             @Override public void validate(TextView textView, String text) {
-                if ((text.isEmpty() || nameEdit.getText().toString().isEmpty() || initEdit.getText().toString().isEmpty() ||
-                        currEdit.getText().toString().isEmpty())
-                        && okButton.isEnabled()) {
+                if (text.isEmpty() || Helpers.verifyTextBox(nameEdit) || Helpers.verifyTextBox(initEdit)) {
                     okButton.setEnabled(false);
+                    errorText.setText(getString(R.string.newCounterError));
                     errorText.setVisibility(View.VISIBLE);
                 } else {
                     okButton.setEnabled(true);
@@ -80,10 +78,16 @@ public class EditCounterActivity extends AppCompatActivity {
         okButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                //TODO: edit the counter
-                Counter editedCounter = new Counter("TEST", 21); //change this
+                String name = nameEdit.getText().toString();
+                Integer init = Integer.valueOf(initEdit.getText().toString());
+                Integer curr = Integer.valueOf(currEdit.getText().toString());
+                String comment = commentEdit.getText().toString();
+                Counter editedCounter = new Counter(name, init, comment, curr);
+
+                int selectedCounterIndex = Helpers.getCounterIndex(counterList, selectedCounter);
 
                 Intent output = new Intent();
+                output.putExtra("OLD_COUNTER_INDEX", selectedCounterIndex);
                 output.putExtra("EDIT_COUNTER", editedCounter);
                 setResult(RESULT_OK, output);
                 finish();

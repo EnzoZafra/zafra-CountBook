@@ -1,6 +1,7 @@
 package com.example.enzozafra.zafra_countbook;
 
 import android.os.Parcelable;
+import android.util.Log;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -23,6 +24,14 @@ public class Counter implements Serializable {
         this.name = name;
         this.initialValue = initialValue;
         this.currentValue = initialValue;
+        this.dateEdited = new Date();
+        this.comment = comment;
+    }
+
+    public Counter(String name, Integer initialValue, String comment, Integer currentValue) {
+        this.name = name;
+        this.initialValue = initialValue;
+        this.currentValue = currentValue;
         this.dateEdited = new Date();
         this.comment = comment;
     }
@@ -77,5 +86,29 @@ public class Counter implements Serializable {
         return "Name: " + name + "; currentValue: " + currentValue.toString() +
                 "; initialValue: " + initialValue.toString() + "; comment: " + comment +
                 "; dateEdited: " + dateEdited.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (!Counter.class.isAssignableFrom(obj.getClass())) {
+            return false;
+        }
+        final Counter other = (Counter) obj;
+        if (!this.name.equals(other.name)) {
+            return false;
+        }
+        if (!this.initialValue.equals(other.initialValue)) {
+            return false;
+        }
+        if (!this.currentValue.equals(other.currentValue)) {
+            return false;
+        }
+        if ((this.comment != null) && (other.comment != null) && !this.comment.equals(other.comment)) {
+            return false;
+        }
+        return true;
     }
 }
