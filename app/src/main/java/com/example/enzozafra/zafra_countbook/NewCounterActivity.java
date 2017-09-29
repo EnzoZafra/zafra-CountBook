@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+/**
+ * Activity for creating new counters.
+ */
 public class NewCounterActivity extends AppCompatActivity {
 
     @Override

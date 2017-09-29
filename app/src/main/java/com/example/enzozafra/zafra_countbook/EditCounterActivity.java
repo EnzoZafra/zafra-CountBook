@@ -11,6 +11,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/**
+ * Activity class for Viewing / Editing counter information.
+ */
 public class EditCounterActivity extends AppCompatActivity {
 
     @Override

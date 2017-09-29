@@ -4,6 +4,12 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * The Counter class is a Model class that represents the object for the UI.
+ *
+ * This class implements serializable to be able to transfer data from one activity to another
+ * and also gives the ability to save data into a local file.
+ */
 public class Counter implements Serializable {
     private String name;
     private Date dateEdited;
@@ -13,6 +19,12 @@ public class Counter implements Serializable {
 
     private static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
+    /**
+     * Counter constructor if the user does not supply a comment.
+     * Will set the current value as the initial value and the date as the current date.
+     * @param name
+     * @param initialValue
+     */
     public Counter(String name, Integer initialValue) {
         this.name = name;
         this.initialValue = initialValue;
@@ -25,6 +37,13 @@ public class Counter implements Serializable {
         }
     }
 
+    /**
+     * Counter constructor if the user supplies a comment.
+     * Sets the current value = the initial value and the date as the current date.
+     * @param name
+     * @param initialValue
+     * @param comment
+     */
     public Counter(String name, Integer initialValue, String comment) {
         this.name = name;
         this.initialValue = initialValue;
@@ -38,6 +57,14 @@ public class Counter implements Serializable {
         this.comment = comment;
     }
 
+    /**
+     * Counter constructor if the user supplies a comment and a current value.
+     * Sets the date as the current date.
+     * @param name
+     * @param initialValue
+     * @param comment
+     * @param currentValue
+     */
     public Counter(String name, Integer initialValue, String comment, Integer currentValue) {
         this.name = name;
         this.initialValue = initialValue;
@@ -87,22 +114,25 @@ public class Counter implements Serializable {
         this.comment = comment;
     }
 
+    /**
+     * Increments the current value of the counter
+     */
     public void incCounter() {
         this.currentValue++;
     }
 
+    /**
+     * Decrements the current value of the counter
+     */
     public void decCounter() {
         this.currentValue--;
     }
 
-    // For testing purposes
-    @Override
-    public String toString() {
-        return "Name: " + name + "; currentValue: " + currentValue.toString() +
-                "; initialValue: " + initialValue.toString() + "; comment: " + comment +
-                "; dateEdited: " + dateEdited.toString();
-    }
-
+    /**
+     * Checks if two Counter objects are equal to each other
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {

@@ -11,6 +11,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/**
+ * This Adapter acts as a bridge between a View and the underlying data for that view.
+ * This adapter will create a View for each item in the dataset.
+ */
 public class ListItemAdapter extends BaseAdapter implements ListAdapter {
 
     private ArrayList<Counter> list = new ArrayList<Counter>();
