@@ -1,0 +1,37 @@
+Counter class
+
+The Counter class is a model class which represents each of the counters in the view.
+
+It implements the Serializable interface so that a Counter object can be passed between Activities
+and also be able to save in a local file.
+
+The Counter class has a getter for all of its properties and a setter for all except for the Date
+since the Date can never be set from a user input.
+
+The counter has methods to decrement and increment the counter.
+
+
+
+ListItemAdapter class
+
+The ListItemAdapter class inherits from the Java class: BaseAdapter and implements the ListAdapter
+interface.
+
+The adapter acts as a bridge between a view and the underlying data for that view.
+I created a custom adapter as it will create a custom View for each item in the dataset.
+
+It implements the methods from ListAdapter and I overrid the notifyDataSetChanged() method from
+BaseAdapter to tell the UI to update the number of counter summary in addition
+to calling notifyDataSetChanged()
+
+
+
+
+TextValidator class
+
+This class watches for any changes in a textView and runs a valdator to validate user input.
+
+
+
+
+
