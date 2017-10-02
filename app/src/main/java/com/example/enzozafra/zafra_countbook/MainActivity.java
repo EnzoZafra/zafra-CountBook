@@ -101,6 +101,8 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Loads the file of previous Counters
+     *
+     * Code taken from lonelyTWitter (lab code)
      */
     public void loadFromFile() {
         try {
@@ -119,6 +121,8 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Saves the list of Counters in a local file
+     *
+     * Code taken from lonelyTwitter (lab code)
      */
     public void saveInFile() {
         try {
