@@ -3,7 +3,6 @@ package com.example.enzozafra.zafra_countbook;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,7 +37,7 @@ public class EditCounterActivity extends AppCompatActivity {
         initEdit.setText(selectedCounter.getInitialValue().toString());
         currEdit.setText(selectedCounter.getCurrentValue().toString());
         commentEdit.setText(selectedCounter.getComment());
-        dateText.setText(Helpers.setDateFormat(selectedCounter.getDate(), "yyyy-mm-dd"));
+        dateText.setText(Helpers.setDateFormat(selectedCounter.getDate(), "yyyy-MM-dd"));
 
 
         nameEdit.addTextChangedListener(new TextValidator(nameEdit) {

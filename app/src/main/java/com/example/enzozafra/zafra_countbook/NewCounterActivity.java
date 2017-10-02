@@ -3,7 +3,6 @@ package com.example.enzozafra.zafra_countbook;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -60,7 +59,6 @@ public class NewCounterActivity extends AppCompatActivity {
                 String comment = commentEdit.getText().toString();
 
                 Counter newCounter = new Counter(name, initialValue, comment);
-                Log.d("activityresult", newCounter.toString());
 
                 Intent output = new Intent();
                 output.putExtra("NEW_COUNTER", newCounter);
