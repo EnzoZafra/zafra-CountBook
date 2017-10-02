@@ -31,4 +31,4 @@ The app must assist the user in proper data entry. For example, use appropriate 
 The app must be persistent. That is, exiting and fully stopping the app should not lose data.
 
 ##My demo
-[![video_demo](https://www.youtube.com/watch?v=6t9c4upKTQ8/0.jpg)](https://www.youtube.com/watch?v=6t9c4upKTQ8)
+[![video demo](https://www.youtube.com/watch?v=6t9c4upKTQ8/0.jpg)](https://www.youtube.com/watch?v=6t9c4upKTQ8)
